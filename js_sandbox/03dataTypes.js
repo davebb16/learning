@@ -9,7 +9,7 @@ const age = 16;
 // console.log(typeof age) returns 'number'
 // If we add quotes however, it is a string
 // const age = '16';
-// console.log(typeof age)
+// console.log(typeof age) returns 'string'
 
 // Boolean
 const hasKids = true;
