@@ -8,8 +8,19 @@
 </head>
 <body>
   <h1>JavaScript Sandbox: Section 2</h1>
+  <form name="theForm">
+    <label for='name'>What is your name?</label> 
+    <input name='theName' id="name"/>
+
+    <br/>
+    <label for='age'>What is your age?</label> 
+    <input name='theAge' id="age"/>
+    <button onClick="greet(document.theForm.theName.value, document.theForm.theAge.value)" >Submit</button>
+  </form>
   <script src="app.js"></script>
   <script src="06stringsAndConcatenation.js"></script>
+  <script src="greetHandler.js"></script>
+
 
 </body>
 </html>
