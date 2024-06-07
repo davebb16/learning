@@ -1,26 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript Sandbox: Section 2</title>
-</head>
-<body>
-  <h1>JavaScript Sandbox: Section 2</h1>
-  <form name="theForm">
-    <label for='name'>What is your name?</label> 
-    <input name='theName' id="name"/>
+  <head>
+    <meta charset="utf-8">
+    <title>Displaying Keypresses</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>Displaying Typed Characters</h1>
+    <p>
+      This document includes a simple script that displays the keys
+      you type as a new paragraph below. Type a few keys to try it.
+    </p>
+    <p id="keys"></p>
 
-    <br/>
-    <label for='age'>What is your age?</label> 
-    <input name='theAge' id="age"/>
-    <button onClick="greet(document.theForm.theName.value, document.theForm.theAge.value)" >Submit</button>
-  </form>
-  <script src="app.js"></script>
-  <script src="06stringsAndConcatenation.js"></script>
-  <script src="greetHandler.js"></script>
+    <script>
+    function displayKey(whyDoWeUseE) {
+       // which key was pressed?
+       var keycode=whyDoWeUseE.which;
+       character=String.fromCharCode(keycode);
 
+       // find the object for the destination paragraph
+       var keys_paragraph = document.getElementById('keys');
 
-</body>
+       // add the character to the paragraph
+       keys_paragraph.innerHTML += character;
+    }
+    document.addEventListener("keypress",displayKey);
+   </script>
+  </body>
 </html>
